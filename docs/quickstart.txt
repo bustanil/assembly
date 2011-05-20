@@ -1,0 +1,32 @@
+#Requirements:
+- MySQL 5.x  + HeidiSQL (MySQL client)
+- Java IDE, eclipse or intellij idea
+- Maven 3.x
+- Patience...
+
+#if you use eclipse, do this first
+mvn eclipse:eclipse
+
+#if you use intellij idea, just open the pom.xml from the IDE, it's easier
+mvn idea:idea
+
+#change application.properties file to match your environment (especially database)
+
+#to run the application:
+cd <project_dir>
+mvn install
+mvn jetty:run
+
+#Directory structure explanation:
+assembly-java                           -- root dir
+ docs                                   -- document directory, contains installation guide, readme, licenses, etc
+ src                                    -- application source and test code
+   main                                 -- main application dir
+     java                               -- application source code
+     resources                          -- application resources to be included in classpath
+     webapp                             -- root web dir
+   test                                 -- test dir
+     java                               -- java test code
+     resources                           -- resources used in test
+ target                                 -- temporary directory for building and deploying the application (Jetty server uses this directory)
+ pom.xml                                -- Maven project file (analogous to build.xml of ant)
